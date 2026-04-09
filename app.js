@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
+const { name } = require('ejs')
 
 require('./utils/connection')
 
@@ -21,7 +22,11 @@ app.get('/', (req, res) => {
     res.json({
       success: true,
        message: "Welcome to the World of Aftab Mumtaz",
-       contactInfo: "+923077945548"
+       contactInfo: {
+        phone: "+923077945548",
+        email: "aftabmumtaz14@gmail.com",
+        name: "Aftab Mumtaz"
+       }
      });  
 })
 
