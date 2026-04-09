@@ -17,6 +17,14 @@ app.use(cookieParser())
 const port = process.env.PORT;
 
 
+app.get('/', (req, res) => {
+    res.json({
+      success: true,
+       message: "Welcome to the World of Aftab Mumtaz",
+       contactInfo: "+923077945548"
+     });  
+})
+
 
 app.use("/api/auth", require('./routes/authRoutes'))
 app.use("/api/products", require('./routes/productRoutes'))
